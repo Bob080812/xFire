@@ -21,7 +21,7 @@ public class TokenManager {
     /**
      * 编码密钥
      */
-    private String tokenSignKey = "123456";
+    private String tokenSignKey = "xFire08";
 
     /**
      * 使用jwt根据用户名生成token

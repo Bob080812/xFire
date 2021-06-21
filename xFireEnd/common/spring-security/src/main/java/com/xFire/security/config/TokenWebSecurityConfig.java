@@ -53,7 +53,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 //退出路径
-                .and().logout().logoutUrl("/admin/acl/index/logout")
+                .and().logout().logoutUrl("/admin/system/index/logout")
                 //退出后进行的处理
                 .addLogoutHandler(new TokenLogoutHandler(tokenManager,redisTemplate)).and()
                 //认证过滤器
@@ -71,6 +71,6 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/api/**");
-        web.ignoring().antMatchers("/**/acl/test/**");
+        web.ignoring().antMatchers("/**/system/test/**");
     }
 }

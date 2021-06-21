@@ -21,7 +21,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("acl_user_role")
+@TableName("user_role")
 @ApiModel(value="UserRole对象", description="")
 public class UserRole implements Serializable {
 

@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("acl_role")
+@TableName("role")
 public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;

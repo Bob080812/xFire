@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admin/acl/test2")
+@RequestMapping("/admin/system/test2")
 public class test2 {
     @RequestMapping("/aaa")
     @PreAuthorize("hasAuthority('user.add')")

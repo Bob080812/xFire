@@ -38,7 +38,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         //是否只用post方式提交
         this.setPostOnly(false);
         //设置登录路径。匹配post方式提交
-        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login","POST"));
+        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/system/login","POST"));
     }
 
     /**

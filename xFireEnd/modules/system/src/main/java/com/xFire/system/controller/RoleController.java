@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2020-01-12
  */
 @RestController
-@RequestMapping("/admin/acl/role")
+@RequestMapping("/admin/system/role")
 //@CrossOrigin
 public class RoleController {
 
