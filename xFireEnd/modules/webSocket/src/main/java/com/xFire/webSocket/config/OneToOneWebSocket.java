@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @ServerEndpoint(value = "/test/oneToOne") 前端通过此URI 和后端交互，建立连接
  */
-@ServerEndpoint(value = "/test/oneToOne")
+@ServerEndpoint(value = "/websocket/oneToOne")
 @Component
 public class OneToOneWebSocket  {
 

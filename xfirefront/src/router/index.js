@@ -7,6 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component:()=>import ('../components/login/login'),
+  },
+  {
+    path: '/layout',
     name: 'Layout',
     component:()=>import('../components/Layout/Layout'),
     redirect:'/layout/test',

@@ -29,3 +29,7 @@ spring:
             - Path=/test/**
 #          filters:
 #            - StripPrefix=1
+        - id: service-websocket
+          uri: lb://service-websocket
+          predicates:
+            - Path=/websocket/**

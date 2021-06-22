@@ -14,7 +14,7 @@ export default {
   name: "test",
   data() {
     return {
-      path: "ws://127.0.0.1:9000/test/oneToOne",
+      path: "ws://127.0.0.1:9000/websocket/oneToOne",
       socket: "",
       message: ''
     }
