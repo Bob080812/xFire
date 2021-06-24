@@ -1,5 +1,5 @@
 // import router from './router'
-
+console.log("permissions加载了")
 
 
 //const whiteList = ['/login', '/auth-redirect', '/bind', '/register']

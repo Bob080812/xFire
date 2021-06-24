@@ -5,6 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    userInfo:{
+      username:'',
+      password:'',
+      userRoutes:[],
+      userMenu:[]
+    }
   },
   mutations: {
   },

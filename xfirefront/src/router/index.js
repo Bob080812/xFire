@@ -20,7 +20,26 @@ const routes = [
         path:'/layout/test',
         name:'test',
         component: (resolve) => require(['@/views/test/test'], resolve)
-      }
+      },
+      {
+        path:'/layout/test1',
+        name:'test1',
+        component: (resolve) => require(['@/views/test/test1'], resolve)
+      },
+      {
+        path:'/layout/test2',
+        name:'test2',
+        component: (resolve) => require(['@/views/test/test2'], resolve)
+      },
+      {
+        path:'/layout/test3',
+        name:'test3',
+        component: (resolve) => require(['@/views/test/test3'], resolve)
+      },{
+        path:'/layout/test4',
+        name:'test4',
+        component: (resolve) => require(['@/views/test/test4'], resolve)
+      },
     ]
   }
 ]
