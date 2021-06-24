@@ -6,7 +6,10 @@ import router from './router'
 import './permission'
 import store from './store'
 import axios from 'axios'
+import Fragment from 'vue-fragment'
 
+
+Vue.use(Fragment.Plugin)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = ' http://127.0.0.1:9000';
