@@ -1,5 +1,6 @@
 package com.xFire.system.controller;
 
+import com.xFire.system.entity.Permission;
 import com.xFire.system.service.IndexService;
 import com.xFire.utils.utils.ReturnValue;
 import com.alibaba.fastjson.JSONObject;
@@ -38,7 +39,7 @@ public class IndexController {
     public ReturnValue getMenu(){
         //获取当前登录用户用户名
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        List<JSONObject> permissionList = indexService.getMenu(username);
+        List<Permission> permissionList = indexService.getMenu(username);
         return ReturnValue.ok().data("permissionList", permissionList);
     }
 

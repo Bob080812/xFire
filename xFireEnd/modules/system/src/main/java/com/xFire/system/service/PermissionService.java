@@ -32,7 +32,7 @@ public interface PermissionService extends IService<Permission> {
     //根据用户id获取用户菜单
     List<String> selectPermissionValueByUserId(String id);
 
-    List<JSONObject> selectPermissionByUserId(String id);
+    List<Permission> selectPermissionByUserId(String id);
 
     //获取全部菜单
     List<Permission> queryAllMenuGuli();

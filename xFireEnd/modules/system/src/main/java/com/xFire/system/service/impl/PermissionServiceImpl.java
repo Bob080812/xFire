@@ -127,7 +127,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
     }
 
     @Override
-    public List<JSONObject> selectPermissionByUserId(String userId) {
+    public List<Permission> selectPermissionByUserId(String userId) {
         List<Permission> selectPermissionList = null;
         if(this.isSysAdmin(userId)) {
             //如果是超级管理员，获取所有菜单
@@ -137,8 +137,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
         }
 
         List<Permission> permissionList = PermissionHelper.bulid(selectPermissionList);
-        List<JSONObject> result = MemuHelper.bulid(permissionList);
-        return result;
+        return permissionList;
     }
 
     /**

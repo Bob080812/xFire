@@ -1,5 +1,6 @@
 package com.xFire.system.service.impl;
 
+import com.xFire.system.entity.Permission;
 import com.xFire.system.entity.Role;
 import com.xFire.system.entity.User;
 import com.xFire.system.service.IndexService;
@@ -71,11 +72,11 @@ public class IndexServiceImpl implements IndexService {
      * @return
      */
     @Override
-    public List<JSONObject> getMenu(String username) {
+    public List<Permission> getMenu(String username) {
         User user = userService.selectByUsername(username);
 
         //根据用户id获取用户菜单权限
-        List<JSONObject> permissionList = permissionService.selectPermissionByUserId(user.getId());
+        List<Permission> permissionList = permissionService.selectPermissionByUserId(user.getId());
         return permissionList;
     }
 

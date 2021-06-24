@@ -1,6 +1,7 @@
 package com.xFire.system.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xFire.system.entity.Permission;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,6 @@ public interface IndexService {
      * @param username
      * @return
      */
-    List<JSONObject> getMenu(String username);
+    List<Permission> getMenu(String username);
 
 }
