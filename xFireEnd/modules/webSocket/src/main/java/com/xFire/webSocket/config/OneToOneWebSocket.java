@@ -5,8 +5,10 @@ import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.xFire.webSocket.domain.MyMessage;
 import com.alibaba.fastjson.*;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Component;
-
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.util.Map;
@@ -15,6 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 前后端交互的类实现消息的接收推送(自己发送给另一个人)
  *
+ * @author lx
  * @ServerEndpoint(value = "/test/oneToOne") 前端通过此URI 和后端交互，建立连接
  */
 @ServerEndpoint(value = "/websocket/oneToOne")
@@ -56,18 +59,24 @@ public class OneToOneWebSocket  {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("服务端收到客户端[{}]的消息[{}]", session.getId(), message);
-        try {
-            MyMessage myMessage = JSON.parseObject(message, MyMessage.class);
-            if (myMessage != null) {
-                Session toSession = clients.get(myMessage.getUserId());
-                if (toSession != null) {
-                    this.sendMessage(myMessage.getMessage(), toSession);
+        if(!"Token".equals(message.substring(0,5))){
+            log.info("服务端收到客户端[{}]的消息[{}]", session.getId(), message);
+            try {
+                MyMessage myMessage = JSON.parseObject(message, MyMessage.class);
+                if (myMessage != null) {
+                    Session toSession = clients.get(myMessage.getUserId());
+                    if (toSession != null) {
+                        this.sendMessage(myMessage.getMessage(), toSession);
+                    }
                 }
+            } catch (Exception e) {
+                log.error("解析失败：{}", e);
             }
-        } catch (Exception e) {
-            log.error("解析失败：{}", e);
+        }else {
+             String userInfo = Jwts.parser().setSigningKey("xFire08").parseClaimsJws(message.substring(6)).getBody().get("userId").toString();
+            log.info(userInfo);
         }
+
     }
 
     @OnError

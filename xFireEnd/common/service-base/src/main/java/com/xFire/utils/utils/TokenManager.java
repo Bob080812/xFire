@@ -1,4 +1,4 @@
-package com.xFire.security.security;
+package com.xFire.utils.utils;
 
 import io.jsonwebtoken.CompressionCodecs;
 import io.jsonwebtoken.Jwts;
@@ -33,6 +33,7 @@ public class TokenManager {
                 //设置主体部分
                 .setSubject(username)
                 //设置有效时长
+                .claim("userId","11111")
                 .setExpiration(new Date(System.currentTimeMillis()+tokenEcpiraten))
                 .signWith(SignatureAlgorithm.HS512,tokenSignKey).compressWith(CompressionCodecs.GZIP).compact();
         return token;

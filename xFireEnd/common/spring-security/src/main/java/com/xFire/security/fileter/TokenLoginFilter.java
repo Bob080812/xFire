@@ -2,7 +2,7 @@ package com.xFire.security.fileter;
 
 import com.xFire.security.Entity.SecurityUser;
 import com.xFire.security.Entity.ComUser;
-import com.xFire.security.security.TokenManager;
+import com.xFire.utils.utils.TokenManager;
 import com.xFire.utils.utils.ResponseUtil;
 import com.xFire.utils.utils.ReturnValue;
 import com.fasterxml.jackson.databind.ObjectMapper;

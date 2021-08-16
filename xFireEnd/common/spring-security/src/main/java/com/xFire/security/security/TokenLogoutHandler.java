@@ -2,6 +2,7 @@ package com.xFire.security.security;
 
 import com.xFire.utils.utils.ResponseUtil;
 import com.xFire.utils.utils.ReturnValue;
+import com.xFire.utils.utils.TokenManager;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;

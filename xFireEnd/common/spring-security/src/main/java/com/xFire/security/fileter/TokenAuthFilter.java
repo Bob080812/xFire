@@ -1,6 +1,6 @@
 package com.xFire.security.fileter;
 
-import com.xFire.security.security.TokenManager;
+import com.xFire.utils.utils.TokenManager;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

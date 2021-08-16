@@ -4,7 +4,7 @@ import com.xFire.security.fileter.TokenAuthFilter;
 import com.xFire.security.fileter.TokenLoginFilter;
 import com.xFire.security.security.DefaultPasswordEncoder;
 import com.xFire.security.security.TokenLogoutHandler;
-import com.xFire.security.security.TokenManager;
+import com.xFire.utils.utils.TokenManager;
 import com.xFire.security.security.UnauthEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

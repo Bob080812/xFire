@@ -9,6 +9,7 @@
 
 <script>
 import axios from "axios";
+import Cookies from 'js-cookie'
 
 export default {
   name: "test",
@@ -16,10 +17,13 @@ export default {
     return {
       path: "ws://127.0.0.1:9000/websocket/oneToOne",
       socket: "",
-      message: ''
+      message: '',
+      token:''
     }
   },
   mounted() {
+    this.token = Cookies.get('Token');
+    console.log(this.token);
     // 初始化
     this.init()
   },
@@ -48,6 +52,7 @@ export default {
       }
     },
     open() {
+      this.send("Token:"+this.token);
       console.log("socket连接成功")
     },
     error() {

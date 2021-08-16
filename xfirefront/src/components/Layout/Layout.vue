@@ -9,17 +9,22 @@
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b">
-      <my-layout :menus="menus"></my-layout>
+      <template v-for="menu in menus">
+        <el-menu-item :index="menu.path" :key="menu.title" v-if="!menu.children">{{menu.title}}</el-menu-item>
+        <el-submenu :index="menu.title" :key="menu.title" v-else-if="menu.children">
+          <template slot="title">{{menu.title}}</template>
+          <el-menu-item v-for="childMenu in menu.children" :key="childMenu.title" :index="childMenu.path">{{childMenu.title}}</el-menu-item>
+        </el-submenu>
+      </template>
     </el-menu>
     <router-view/>
   </div>
 </template>
 
 <script>
-import MyLayout from "@/components/Layout/myLayout";
 export default {
   name: "Layout",
-  components: {MyLayout},
+
   data() {
     return {
       activeIndex: '1',
@@ -30,20 +35,20 @@ export default {
             {
               path:'/layout/test1',
               title:'test1'
+            },
+            {
+              path:'/layout/test2',
+              title: 'test2'
             }
           ],
           title:'大类1',
-          path: '1'
+          path: ''
         },
         {
           children:[
             {
               path:'/layout/test3',
-              title:'test3',
-              children:[{
-                path:'/layout/test2',
-                title: 'test2'
-              }]
+              title:'test3'
             },
             {
               path:'/layout/test4',
@@ -51,7 +56,7 @@ export default {
             }
           ],
           title: '大类2',
-          path: '2'
+          path: ''
         },
         {
           title: '大类3',
@@ -68,8 +73,6 @@ export default {
 }
 </script>
 
-<style >
-.myelmenu{
-  padding-left: 100px;
-}
+<style scoped>
+
 </style>
